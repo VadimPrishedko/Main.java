@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         int iterations = 5;
         box(iterations);
+        materialChange();
     }
 
     public static void box(int iterations) {
@@ -19,6 +20,16 @@ public class Main {
             System.out.println("Объём коробки " + (i + 1) + " = " + box.volumeCalc() + " м3");
         }
     }
+
+    public static void materialChange() {
+        Box box = new Box(2, 3, 4, "Белый", "дерево");
+        box.setMaterial("железо");
+
+        System.out.println("Заменили материал коробки, теперь material = " + box.getMaterial());
+
+    }
+
+
 }
 
 
