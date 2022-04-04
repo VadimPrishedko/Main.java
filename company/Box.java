@@ -36,7 +36,9 @@ public class Box {
     }
 
     public void setWidth(int width) {
-        this.width = width;
+        if (width > 0) {
+            this.width = width;
+        } else System.out.println("Значение не может быть <= 0");
     }
 
     public int getLength() {
@@ -44,7 +46,9 @@ public class Box {
     }
 
     public void setLength(int length) {
-        this.length = length;
+        if (length > 0) {
+            this.length = length;
+        } else System.out.println("Значение не может быть <= 0");
     }
 
     public String getColor() {

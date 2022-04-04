@@ -24,9 +24,7 @@ public class Main {
     public static void materialChange() {
         Box box = new Box(2, 3, 4, "Белый", "дерево");
         box.setMaterial("железо");
-
         System.out.println("Заменили материал коробки, теперь material = " + box.getMaterial());
-
     }
 
 
