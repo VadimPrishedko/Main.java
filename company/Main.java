@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.characteristics.Colour;
+import com.company.characteristics.Material;
+
 import java.util.Random;
 
 public class Main {
@@ -7,6 +10,7 @@ public class Main {
         int iterations = 5;
         box(iterations);
         materialChange();
+        colorChange();
     }
 
     public static void box(int iterations) {
@@ -22,9 +26,14 @@ public class Main {
     }
 
     public static void materialChange() {
-        Box box = new Box(2, 3, 4, "Белый", "дерево");
-        box.setMaterial("железо");
-        System.out.println("Заменили материал коробки, теперь material = " + box.getMaterial());
+        Box box = new Box(2, 3, 4,  Material.WOOD);
+        Material materialBox = Material.IRON;
+        System.out.println("Заменили материал коробки, теперь material = " + materialBox.getVelue());
+    }
+    public static void colorChange() {
+        ColorBox box = new ColorBox(2,3,4, Material.WOOD, Colour.BLACK);
+        Colour color = Colour.PINK;
+        System.out.println("Заменили цвет коробки, теперь color = " + color.getVelue());
     }
 
 

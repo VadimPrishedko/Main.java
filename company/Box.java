@@ -1,13 +1,16 @@
 package com.company;
 
+import com.company.characteristics.Material;
+
+
 public class Box {
-
-
     private int height;
     private int width;
     private int length;
-    private String color;
-    private String material;
+    private Material material;
+
+    public Box() {
+    }
 
     public Box(int height, int width, int length) {
         this.height = height;
@@ -15,9 +18,8 @@ public class Box {
         this.length = length;
     }
 
-    public Box(int height, int width, int length, String color, String material) {
+    public Box(int height, int width, int length, Material material) {
         this(height, width, length);
-        this.color = color;
         this.material = material;
     }
 
@@ -51,19 +53,11 @@ public class Box {
         } else System.out.println("Значение не может быть <= 0");
     }
 
-    public String getColor() {
-        return color;
+    public void getMaterial(Material material) {
+        this.material = material;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 
