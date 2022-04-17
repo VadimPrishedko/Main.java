@@ -11,6 +11,7 @@ public class Main {
         box(iterations);
         materialChange();
         colorChange();
+        warehouse();
     }
 
     public static void box(int iterations) {
@@ -29,14 +30,26 @@ public class Main {
         Box box = new Box(2, 3, 4,  Material.WOOD);
         Material materialBox = Material.IRON;
         System.out.println("Заменили материал коробки, теперь material = " + materialBox.getVelue());
+        System.out.println(box.toString());
+
+
     }
     public static void colorChange() {
         ColorBox box = new ColorBox(2,3,4, Material.WOOD, Colour.BLACK);
         Colour color = Colour.PINK;
         System.out.println("Заменили цвет коробки, теперь color = " + color.getVelue());
+        System.out.println(box.toString());
     }
 
+    public static void warehouse(){
+        Box boxMaterial = new Box(2, 3, 4,  Material.WOOD);
+        Box boxColor = new ColorBox(2,3,4, Material.WOOD, Colour.BLACK);
 
+        Warehouse warehouse = new Warehouse(2);
+        warehouse.addBox(boxMaterial,0);
+        warehouse.addBox(boxColor,1);
+        System.out.println(warehouse.toString());
+    }
 }
 
 

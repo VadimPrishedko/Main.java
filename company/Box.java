@@ -7,20 +7,44 @@ public class Box {
     private int height;
     private int width;
     private int length;
-    private Material material;
+    protected Material material;
 
     public Box() {
     }
 
     public Box(int height, int width, int length) {
-        this.height = height;
-        this.width = width;
-        this.length = length;
+        try {
+            if(height <= 0 ||  width <= 0 || length <=0){
+                throw new ArithmeticException("Должен быть больше 0");
+            }
+            this.height = height;
+            this.width = width;
+            this.length = length;
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
     }
+
 
     public Box(int height, int width, int length, Material material) {
         this(height, width, length);
-        this.material = material;
+        try {
+            if(material == null){
+                throw new NullPointerException("Материал не задан");
+            }
+            this.material = material;
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    @Override
+    public String toString() {
+        return "высота = " + height + "\n"+
+               "ширина = " + width + "\n"+
+               "длина = " + length + "\n"+
+               "материал = " + material + "\n";
     }
 
     public int getHeight() {
